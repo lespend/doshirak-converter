@@ -1,0 +1,17 @@
+.link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.picture {
+    width: 50px;
+}
+
+.title {
+    margin-left: 20px;
+    font-size: 36px;
+    line-height: 0.8em;
+    font-family: 'Lavalamp', monospace;
+}

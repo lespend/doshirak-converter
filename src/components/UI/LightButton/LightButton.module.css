@@ -1,0 +1,21 @@
+.button {
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: none;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    transition: transform .1s ease-out;
+}
+
+.button:not(disabled) {
+    cursor: pointer;
+}
+
+.button:hover:not(disabled) {
+    transform: scale(1.1);
+}
+
+.buttonActive {
+    background-color: #FFB300;
+    color: #fff;
+}

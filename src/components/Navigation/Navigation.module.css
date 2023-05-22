@@ -1,0 +1,35 @@
+.navigation {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 200px;
+    margin-left: -60px;
+}
+
+.navigationDefault {
+    height: 100px;
+}
+
+.navigationMain {
+    height: 200px;
+}
+
+.link {
+    margin-left: 60px;
+}
+
+.menuButton {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menuButtonIcon {
+    width: 50px;
+    height: auto;
+}

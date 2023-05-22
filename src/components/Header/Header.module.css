@@ -1,0 +1,20 @@
+.header {
+    z-index: 100;
+    background-color: #FFB300;
+}
+
+.headerMain {
+    width: 100%;
+    position: absolute;
+    background-color: transparent;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contentMain {
+    justify-content: flex-end;
+}

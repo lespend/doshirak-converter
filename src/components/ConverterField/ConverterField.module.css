@@ -1,0 +1,33 @@
+.block {
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    border: 1px solid #cecece;
+}
+
+.field {
+    margin-top: 10px;
+    padding-left: 10px;
+    color: #00001b;
+    font-weight: bold;
+    font-family: inherit;
+    width: 100%;
+    background: transparent;
+    font-size: 48px;
+    border: none;
+    outline: none;
+}
+
+.field::placeholder {
+    color:#00001b;
+}
+
+.currency {
+    display: flex;
+    margin-left: -10px;
+}
+
+.currencyButton {
+    margin-left: 10px;
+}

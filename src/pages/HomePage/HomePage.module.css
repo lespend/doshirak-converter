@@ -1,0 +1,61 @@
+.screen {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fd0000;
+    overflow: hidden;
+}
+
+.picture {
+    position: absolute;
+}
+
+.wokPicture {
+    top: 50%;
+    left: 5%;
+}
+
+.eggPicture {
+    top: 25%;
+    left: 5%;
+}
+
+.narutomakiPicture {
+    top: 20%;
+    left: 18%;
+}
+
+.sousPicture {
+    left: 30%;
+    top: 20%;
+    transform: rotate(-20deg);
+}
+
+.mainTitle {
+    position: relative;
+    font-family: 'Lavalamp', monospace;
+    text-align: center;
+    font-size: 90px;
+    color: #00001B;
+    /* text-shadow: 5px 5px 0px #FFEACE, 10px 10px 0px #FFEACE; */
+    z-index: 10;
+}
+
+.mainTitle::before {
+    /* content: ''; */
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFB300;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}

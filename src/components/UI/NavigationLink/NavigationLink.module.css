@@ -1,0 +1,34 @@
+.link {
+    position: relative;
+    text-decoration: none;
+    color: #00001B;
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+.link::after {
+    position: absolute;
+    content: '';
+    height: 5px;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    background-color: #FFB300;
+    animation: hover-out .3s ease-out;
+    transition: width .5s ease-out;
+}
+
+.link:hover::after { 
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+.linkLight {
+    color: #fff;
+}
+
+.linkLight:after {
+    background-color: #ffffff;
+}

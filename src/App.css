@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Lavalamp';
+    font-weight: 400;
+    src: local('Lavalamp'), url('assets/fonts/Lavalamp filled.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RobotoMono';
+    font-weight: 400;
+    src: local('RobotoMono'), url('assets/fonts/RobotoMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RobotoMono';
+    font-weight: 500;
+    src: local('RobotoMono'), url('assets/fonts/RobotoMono-Medium.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'RobotoMono', 'Arial', 'monospace';
+    font-size: 18px;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 10px;
+    width: 100%;
+    max-width: 1200px;
+}
