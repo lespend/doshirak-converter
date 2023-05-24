@@ -10,21 +10,25 @@
 }
 
 .wokPicture {
+    width: 25%;
     top: 50%;
     left: 5%;
 }
 
 .eggPicture {
+    width: 7%;
     top: 25%;
     left: 5%;
 }
 
 .narutomakiPicture {
+    width: 7%;
     top: 20%;
     left: 18%;
 }
 
 .sousPicture {
+    width: 8%;
     left: 30%;
     top: 20%;
     transform: rotate(-20deg);
@@ -58,4 +62,25 @@
     display: flex;
     align-items: center;
     justify-content: end;
+}
+
+@media (max-width: 860px) {
+    .content {
+        justify-content: center;
+    }
+
+    .mainTitle {
+        font-size: 60px;
+    }
+
+    .picture {
+        display: none;
+    }
+    
+}
+
+@media (max-width: 500px) {
+    .mainTitle {
+        font-size: 50px;
+    }
 }

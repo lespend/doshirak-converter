@@ -1,10 +1,10 @@
 import { FC, useEffect } from 'react';
-import Header, { HeaderStyles } from '../../../components/Header/Header';
-import Converter from '../../../components/Converter/Converter';
+import Header, { HeaderStyles } from '../../components/Header/Header';
+import Converter from '../../components/Converter/Converter';
 import classNames from 'classnames';
 import s from './ConverterPage.module.css'
-import { useTypedDispatch } from '../../../hooks/useTypedDispatch';
-import { AppSettingsActionTypes } from '../../../types/appSettings';
+import { useTypedDispatch } from '../../hooks/useTypedDispatch';
+import { AppSettingsActionTypes } from '../../types/appSettings';
 
 const ConverterPage: FC = () => {
     const dispatch = useTypedDispatch();

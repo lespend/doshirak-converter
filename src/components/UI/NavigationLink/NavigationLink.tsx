@@ -8,6 +8,7 @@ interface NavigationLinkProps {
     to: string;
     className?: string;
     view?: NavigationLinkViews;
+    onClick?: (e?: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 export enum NavigationLinkViews {
@@ -15,7 +16,7 @@ export enum NavigationLinkViews {
     light = 'light'
 }
 
-const NavigationLink: FC<NavigationLinkProps> = ({ children, to, className, view }) => {
+const NavigationLink: FC<NavigationLinkProps> = ({ children, to, className, view, onClick }) => {
     const NavigationLinkClasses = classNames(
         s.link,
         className, {
@@ -23,7 +24,7 @@ const NavigationLink: FC<NavigationLinkProps> = ({ children, to, className, view
         }
     )
     return (
-        <Link to={to} className={NavigationLinkClasses}>{ children }</Link>
+        <Link onClick={onClick} to={to} className={NavigationLinkClasses}>{ children }</Link>
     )
 }
 

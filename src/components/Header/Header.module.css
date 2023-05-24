@@ -1,5 +1,6 @@
 .header {
-    z-index: 100;
+    position: relative;
+    z-index: 110;
     background-color: #FFB300;
 }
 
@@ -13,8 +14,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #FFB300;
 }
 
 .contentMain {
     justify-content: flex-end;
+    background-color: transparent;
 }

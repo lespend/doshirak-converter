@@ -14,21 +14,25 @@ const Navigation: FC<NavigationProps> = ({currentView}) => {
     const navigationClasses = classNames({
         [s.navigation]: true,
         [s.navigationDefault]: HeaderStyles.default === currentView,
-        [s.navigationMain]: HeaderStyles.main === currentView
+        [s.navigationMain]: HeaderStyles.main === currentView,
+        [s.navigationActive]: isMenuActive,
     })
 
     const navigationLinkView = currentView === HeaderStyles.default ? NavigationLinkViews.light : NavigationLinkViews.default;
 
+    const navigationLinkClickHandler = () => {
+        setActiveMenu(false);
+    }
+
     return (
         <>
         <div className={navigationClasses}>
-            <NavigationLink view={navigationLinkView} className={s.link} to='/'>Главная</NavigationLink>
-            <NavigationLink view={navigationLinkView} className={s.link} to='/converter'>Конвертер</NavigationLink>
-            <NavigationLink view={navigationLinkView} className={s.link} to='/contacts'>Контакты</NavigationLink>
-            <NavigationLink view={navigationLinkView} className={s.link} to='/about'>О проекте</NavigationLink>
+            <NavigationLink onClick={navigationLinkClickHandler} view={navigationLinkView} className={s.link} to='/'>Главная</NavigationLink>
+            <NavigationLink onClick={navigationLinkClickHandler} view={navigationLinkView} className={s.link} to='/converter'>Конвертер</NavigationLink>
+            <NavigationLink onClick={navigationLinkClickHandler} view={navigationLinkView} className={s.link} to='/about'>О проекте</NavigationLink>
         </div>
         <button className={s.menuButton} onClick={() => setActiveMenu(!isMenuActive)}>
-            <MenuIcon className={s.menuButtonIcon}/>
+            <MenuIcon className={classNames(s.menuButtonIcon, {[s.menuButtonIconMain]: currentView === HeaderStyles.main})}/>
         </button>
         </>
     )

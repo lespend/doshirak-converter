@@ -1,0 +1,88 @@
+.content {}
+
+.quote {
+    visibility: hidden;
+    transform: translateY(100%);
+    opacity: 0;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 36px;
+    position: relative;
+    font-style: italic;
+    padding-left: 50px;
+    padding-right: 50px;
+    animation: appearence 0.7s 1s ease-out forwards;
+}
+
+.quote::before {
+    content: '<<';
+    position: absolute;
+    top: 50%;
+    color: #ffb300;
+    transform: translate(-150%, -50%);
+}
+
+.quote::after {
+    content: '>>';
+    position: absolute;
+    top: 50%;
+    color: #ffb300;
+    transform: translate(50%, -50%);
+}
+
+.quoteAuthor {
+    visibility: hidden;
+    transform: translateY(100%);
+    opacity: 0;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+    color: #cecece;
+    animation: appearence 0.7s 2s ease-out forwards;
+}
+
+.picture {
+    visibility: hidden;
+    transform: translateY(100%);
+    opacity: 0;
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.1);
+    animation: appearence 0.7s ease-out forwards;
+}
+
+.picture path {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: draw 10s 3s ease-out forwards;
+}
+
+@keyframes draw {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes appearence {
+    from {
+        visibility: visible;
+    }
+
+    to {
+        visibility: visible;
+        transform: translate(0, 0%);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 800px) {
+    .quote {
+        font-size: 22px;
+    }
+
+    .quoteAuthor {
+        font-size: 18px;
+    }
+}

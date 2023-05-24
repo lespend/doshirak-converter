@@ -21,7 +21,7 @@
 .menuButton {
     width: 60px;
     height: 60px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background: transparent;
@@ -32,4 +32,82 @@
 .menuButtonIcon {
     width: 50px;
     height: auto;
+}
+
+.menuButtonIcon path {
+    stroke: #fff;
+}
+
+.menuButtonIconMain path {
+    stroke: #000;
+}
+
+@media (max-width: 1100px) {
+    .link {
+        margin-left: 30px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 860px) {
+    .menuButton {
+        display: flex;
+    }
+
+    .navigation {
+        display: none;
+        height: auto;
+        justify-content: start;
+        background-color:#FFB300;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 76px;
+        left: 0;
+        margin-left: 0;
+        z-index: -1;
+        border-radius: 0 0 15px 15px;
+    }
+    
+    .navigationActive {
+        display: flex;
+        animation: show-navigation 1s forwards;
+    }
+
+    .link {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 40px;
+        margin-left: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .link:last-child {
+        border-radius: 0 0 15px 15px;
+    }
+
+    .link::after {
+        content: none;
+    }
+
+    .navigationMain {
+        background-color: #ff0000;
+    }
+}
+
+@media (max-width: 500px) {
+    .navigation {
+        top: 60px;
+    }
+}
+
+@keyframes show-navigation {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
 }

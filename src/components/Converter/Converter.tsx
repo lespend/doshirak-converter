@@ -8,6 +8,7 @@ import { useTypedSelector } from "../../hooks/useTypedSelector";
 import Loader from "../UI/Loader/Loader";
 import CorrespondenceTable from "../CorrespondenceTable/CorrespondenceTable";
 import { generateDefaultConversions } from "../../utils/functions";
+import { convertValue } from "../../utils/functions";
 
 const Converter: FC = () => {
     const {currencyMap, ...state} = useTypedSelector(state => state.converter);
@@ -53,7 +54,7 @@ const Converter: FC = () => {
                         }
                         let value = parseFloat(e.target.value) || 0;
                         dispatch({type: ConverterActionTypes.changeFromValue, payload: e.target.value});
-                        dispatch({type: ConverterActionTypes.changeToValue, payload: currencyMap[state.toCurrency] / currencyMap[state.fromCurrency] * value})
+                        dispatch({type: ConverterActionTypes.changeToValue, payload: convertValue(value, state.fromCurrency, state.toCurrency, currencyMap)})
                     }}
                 />
 
@@ -70,11 +71,11 @@ const Converter: FC = () => {
                         }
                         let value = parseFloat(e.target.value) || 0;
                         dispatch({type: ConverterActionTypes.changeToValue, payload: e.target.value});
-                        dispatch({type: ConverterActionTypes.changeFromValue, payload: currencyMap[state.fromCurrency] / currencyMap[state.toCurrency] * value})
+                        dispatch({type: ConverterActionTypes.changeFromValue, payload: convertValue(value, state.toCurrency, state.fromCurrency, currencyMap)})
                     }}
                 />
             </div>
-            <CorrespondenceTable correspondence={{from: state.fromCurrency, to: state.toCurrency, values: generateDefaultConversions(state.fromCurrency, state.toCurrency, currencyMap)}}/>
+            <CorrespondenceTable className={s.table} correspondence={{from: state.fromCurrency, to: state.toCurrency, values: generateDefaultConversions(state.fromCurrency, state.toCurrency, currencyMap)}}/>
             </>
     )
 }

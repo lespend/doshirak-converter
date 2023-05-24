@@ -3,6 +3,7 @@ import s from './CorrespondenceTable.module.css'
 import classNames from 'classnames'
 
 interface CorrespondenceTableProps {
+    className: string;
     correspondence: {
         from: string;
         to: string;
@@ -10,9 +11,9 @@ interface CorrespondenceTableProps {
     }
 }
 
-const CorrespondenceTable: FC<CorrespondenceTableProps> = ({ correspondence }) => {
+const CorrespondenceTable: FC<CorrespondenceTableProps> = ({ correspondence, className }) => {
     return (
-        <table className={s.table}>
+        <table className={classNames(s.table, className)}>
             <thead>
                 <tr className={classNames(s.tableHead, s.tableRow)}>
                     <th className={s.tableHeadCell}>{correspondence.from}</th>
